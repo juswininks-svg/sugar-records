@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>♡ Sugar Records | Label Simulator</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600;1,700&display=swap');
+:root{--pink:#d77da5;--pink2:#f5d7e4;--ink:#704b60;--muted:#ae879b;--paper:#fffafd;--line:#f0dce6;--bg:#fff3f7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:10px 14px;background:#f8e5ed;color:#a45f80;font-weight:700}button:hover{filter:brightness(.97);transform:translateY(-1px)}button.primary{background:var(--pink);color:white}button.danger{background:#fff0f0;color:#b66b76}button.small{padding:7px 10px;font-size:12px}.shell{max-width:1250px;margin:auto;padding:18px}.top{background:linear-gradient(135deg,#fff,#fce5ef);border:1px solid var(--line);border-radius:25px;padding:23px;margin-bottom:16px;display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}.brand{font:italic 700 34px 'Playfair Display',serif;color:var(--pink);margin:0}.tag{font-size:10px;letter-spacing:2px;color:var(--muted);margin-top:5px}.stats{display:flex;gap:9px;flex-wrap:wrap}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:85px}.stat b{display:block;font-size:20px;color:var(--pink)}.stat span{font-size:10px;color:var(--muted);letter-spacing:1px}.tabs{display:flex;gap:8px;overflow-x:auto;padding:3px 1px 13px}.tab{white-space:nowrap;background:#fff;border:1px solid var(--line)}.tab.active{background:var(--pink);color:#fff}.layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:15px;align-items:start}.main,.side{min-width:0}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px;margin-bottom:14px;box-shadow:0 7px 22px #dba8bc12}.card h2{font:italic 600 23px 'Playfair Display',serif;color:var(--pink);margin:0 0 5px}.sub{font-size:12px;color:var(--muted);margin:0 0 15px;line-height:1.5}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}.field label{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.5px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:10px 11px;background:#fffafd;color:var(--ink);outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:#df9db9}.field textarea{min-height:75px;resize:vertical}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px}.list{display:grid;gap:9px}.item{border:1px solid var(--line);border-radius:15px;padding:12px;display:flex;gap:12px;align-items:center;background:#fffdfd}.avatar{width:47px;height:47px;flex:none;border-radius:14px;background:linear-gradient(135deg,#f8dce8,#fceef3);display:grid;place-items:center;font-size:22px}.itembody{min-width:0;flex:1}.itembody b{display:block;font-size:14px;overflow-wrap:anywhere}.itembody small{display:block;color:var(--muted);font-size:11px;margin-top:3px;line-height:1.45}.pill{display:inline-block;background:#faedf2;color:#ae6e8c;border-radius:30px;padding:4px 8px;font-size:10px;font-weight:700;margin:3px 3px 0 0}.empty{text-align:center;padding:28px 12px;color:#bd9bac;font-size:13px;border:1px dashed var(--line);border-radius:15px}.side .card{position:relative}.side h3{font-size:13px;margin:0 0 9px;color:#bd7899}.side p{font-size:12px;color:var(--muted);line-height:1.55}.quick{display:grid;grid-template-columns:1fr 1fr;gap:8px}.quick button{font-size:11px}.track{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #f7eaf0;font-size:12px}.track:last-child{border:0}.notice{padding:10px 12px;border-radius:12px;background:#fff3f7;color:#a96d89;font-size:12px;margin-bottom:12px;line-height:1.5}.hidden{display:none!important}.modalback{position:fixed;inset:0;background:#54344866;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}.modalback.show{display:flex}.modal{background:#fffafd;border-radius:22px;padding:20px;width:min(500px,100%);max-height:90vh;overflow:auto;border:1px solid var(--line)}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.modalhead h2{font:italic 600 24px 'Playfair Display',serif;color:var(--pink);margin:0}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#704b60;color:#fff;padding:11px 17px;border-radius:30px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:9}.toast.show{opacity:1}.footer{text-align:center;color:#c49caf;font-size:11px;padding:14px}@media(max-width:850px){.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.side .card{margin:0}}@media(max-width:520px){.shell{padding:10px}.top{padding:17px}.brand{font-size:29px}.grid{grid-template-columns:1fr}.side{grid-template-columns:1fr}.card{padding:15px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <div><h1 class="brand">♡ sugar records</h1><div class="tag">INDEPENDENT ENTERTAINMENT GROUP · EST. 2026</div></div>
+  <div class="stats">
+    <div class="stat"><b id="artistCount">0</b><span>ARTISTS</span></div>
+    <div class="stat"><b id="releaseCount">0</b><span>RELEASES</span></div>
+    <div class="stat"><b id="awardCount">0</b><span>AWARDS</span></div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+<button class="tab active" data-page="dashboard">⌂ overview</button>
+<button class="tab" data-page="artists">♡ artists & groups</button>
+<button class="tab" data-page="albums">♫ discography</button>
+<button class="tab" data-page="schedule">▦ comeback planner</button>
+<button class="tab" data-page="awards">✧ award cabinet</button>
+<button class="tab" data-page="label">⚙ label office</button>
+</nav>
+
+<div class="layout">
+<main class="main">
+<section id="page-dashboard" class="page">
+ <div class="card"><h2>the label at a glance</h2><p class="sub">your entertainment universe, all in one place.</p><div id="welcome" class="notice">welcome to sugar records. start by signing your first artist or creating a group.</div><div class="grid">
+ <div class="stat"><b id="soloCount">0</b><span>SOLOISTS</span></div><div class="stat"><b id="groupCount">0</b><span>GROUPS</span></div><div class="stat"><b id="upcomingCount">0</b><span>UPCOMING EVENTS</span></div><div class="stat"><b id="trackCount">0</b><span>TRACKS RELEASED</span></div></div></div>
+ <div class="card"><h2>recent signings</h2><p class="sub">the newest names on your roster.</p><div id="recentArtists" class="list"></div></div>
+ <div class="card"><h2>latest releases</h2><p class="sub">fresh music from your label catalogue.</p><div id="recentAlbums" class="list"></div></div>
+ <div class="card"><h2>next on the calendar</h2><p class="sub">upcoming debuts, comebacks and special events.</p><div id="nextEvents" class="list"></div></div>
+</section>
+
+<section id="page-artists" class="page hidden">
+ <div class="card"><h2>artist roster</h2><p class="sub">sign soloists, create groups and build your label family.</p>
+ <div class="actions"><button class="primary" onclick="openArtist()">＋ sign an artist</button><button onclick="openGroup()">＋ form a group</button></div>
+ <div class="field" style="margin-top:15px"><label>SEARCH YOUR ROSTER</label><input id="artistSearch" placeholder="search names, genres, concepts..."></div>
+ <div id="artistList" class="list"></div></div>
+</section>
+
+<section id="page-albums" class="page hidden">
+ <div class="card"><h2>discography archive</h2><p class="sub">every debut, single, EP, studio album and repackage.</p>
+ <button class="primary" onclick="openAlbum()">＋ create a release</button>
+ <div class="field" style="margin-top:14px"><label>FILTER BY ARTIST</label><select id="albumFilter"><option value="">all artists</option></select></div>
+ <div id="albumList" class="list"></div></div>
+</section>
+
+<section id="page-schedule" class="page hidden">
+ <div class="card"><h2>comeback control room</h2><p class="sub">plan debuts, comebacks, tours, fan meetings and music video premieres.</p>
+ <button class="primary" onclick="openEvent()">＋ schedule an event</button>
+ <div class="field" style="margin-top:14px"><label>EVENT TYPE</label><select id="eventFilter"><option value="">all event types</option><option>Debut</option><option>Comeback</option><option>Single release</option><option>Music video</option><option>Tour</option><option>Fan meeting</option><option>Other</option></select></div>
+ <div id="eventList" class="list"></div></div>
+</section>
+
+<section id="page-awards" class="page hidden">
+ <div class="card"><h2>the award cabinet</h2><p class="sub">celebrate nominations, wins and legendary career milestones.</p>
+ <button class="primary" onclick="openAward()">＋ record an award</button>
+ <div class="field" style="margin-top:14px"><label>FILTER BY YEAR</label><select id="awardFilter"><option value="">all years</option></select></div>
+ <div id="awardList" class="list"></div></div>
+</section>
+
+<section id="page-label" class="page hidden">
+ <div class="card"><h2>label headquarters</h2><p class="sub">give your fictional company its own identity.</p>
+ <div class="field"><label>LABEL NAME</label><input id="labelName" maxlength="45" placeholder="Sugar Records"></div>
+ <div class="field"><label>TAGLINE</label><input id="labelTagline" maxlength="90" placeholder="A little universe of music"></div>
+ <div class="field"><label>FOUNDER / CEO</label><input id="labelFounder" maxlength="45" placeholder="Your name"></div>
+ <div class="field"><label>FOUNDING YEAR</label><input id="labelYear" type="number" min="1900" max="2200" placeholder="2026"></div>
+ <button class="primary" onclick="saveLabel()">♡ save label identity</button></div>
+ <div class="card"><h2>save & backup</h2><p class="sub">your data stays in this browser. export a backup to keep a copy or import it on another device.</p>
+ <div class="actions"><button onclick="exportData()">↓ export backup</button><button onclick="$('importFile').click()">↑ import backup</button><input id="importFile" class="hidden" type="file" accept="application/json"></div>
+ <div class="actions"><button class="danger" onclick="resetData()">reset entire label</button></div></div>
+</section>
+</main>
+
+<aside class="side">
+ <div class="card"><h3>♡ executive desk</h3><p id="sideLabel">sugar records · est. 2026</p><div class="quick"><button onclick="openArtist()">＋ artist</button><button onclick="openGroup()">＋ group</button><button onclick="openAlbum()">＋ album</button><button onclick="openEvent()">＋ event</button><button onclick="openAward()">＋ award</button><button onclick="exportData()">↓ backup</button></div></div>
+ <div class="card"><h3>✧ label philosophy</h3><p>build artists, not just numbers. every era has a story, every release has a world, and every artist gets their own place in music history.</p></div>
+ <div class="card"><h3>♫ creative director's note</h3><p id="directorQuote">your next big era begins with one idea.</p><button class="small" onclick="newQuote()">shuffle note ↻</button></div>
+ </aside>
+</div>
+<div class="footer">made with ♡ for your imaginary music empire · all data is stored locally</div>
+</div>
+
+<div class="modalback" id="modalBack"><div class="modal"><div class="modalhead"><h2 id="modalTitle">create</h2><button class="small" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const KEY='sugarRecordsUniverse_v1';
+let db={label:{name:'Sugar Records',tagline:'A little universe of music',founder:'',year:2026},artists:[],albums:[],events:[],awards:[]};
+let currentPage='dashboard';
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const artistBy=id=>db.artists.find(a=>a.id===id);
+const artistName=id=>artistBy(id)?.name||'Unknown artist';
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2100)}
+function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.artists&&x.albums)db={...db,...x}}catch(e){}}
+function go(page){currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));$('page-'+page).classList.remove('hidden');document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.page===page));render()}
+$('tabs').addEventListener('click',e=>{const t=e.target.closest('[data-page]');if(t)go(t.dataset.page)});
+function modal(title,html){$('modalTitle').textContent=title;$('modalBody').innerHTML=html;$('modalBack').classList.add('show')}
+function closeModal(){$('modalBack').classList.remove('show')}
+$('modalBack').addEventListener('click',e=>{if(e.target===$('modalBack'))closeModal()});
+function artistOptions(selected=''){return '<option value="">choose artist / group</option>'+db.artists.map(a=>`<option value="${a.id}" ${a.id===selected?'selected':''}>${esc(a.name)} (${a.type})</option>`).join('')}
+function openArtist(a=null){
+ modal(a?'edit artist':'sign a new artist',`<form id="artistForm">
+ <div class="field"><label>STAGE / ARTIST NAME *</label><input name="name" required maxlength="45" value="${esc(a?.name||'')}" placeholder="e.g. LUNA"></div>
+ <div class="grid"><div class="field"><label>REAL NAME</label><input name="real" maxlength="55" value="${esc(a?.real||'')}"></div><div class="field"><label>DEBUT DATE</label><input name="debut" type="date" value="${esc(a?.debut||'')}"></div></div>
+ <div class="grid"><div class="field"><label>GENRE</label><input name="genre" value="${esc(a?.genre||'')} " placeholder="pop, R&B, rock..."></div><div class="field"><label>POSITION / ROLE</label><input name="role" value="${esc(a?.role||'')}" placeholder="vocalist, producer..."></div></div>
+ <div class="field"><label>CONCEPT / IMAGE</label><input name="concept" value="${esc(a?.concept||'')}" placeholder="dream pop, cyberpunk, elegant..."></div>
+ <div class="field"><label>ARTIST BIO</label><textarea name="bio">${esc(a?.bio||'')}</textarea></div>
+ <button class="primary" type="submit">♡ ${a?'save changes':'sign artist'}</button></form>`);
+ $('artistForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),data=Object.fromEntries(f);if(a)Object.assign(a,data);else db.artists.push({id:uid(),type:'Soloist',members:[],...data});closeModal();save();toast(a?'artist updated':'new artist signed ♡')};
+}
+function openGroup(a=null){
+ modal(a?'edit group':'form a new group',`<form id="groupForm">
+ <div class="field"><label>GROUP NAME *</label><input name="name" required maxlength="45" value="${esc(a?.name||'')}" placeholder="e.g. PINK PARADE"></div>
+ <div class="grid"><div class="field"><label>GROUP TYPE</label><select name="groupType"><option ${a?.groupType==='Girl group'?'selected':''}>Girl group</option><option ${a?.groupType==='Boy group'?'selected':''}>Boy group</option><option ${a?.groupType==='Co-ed group'?'selected':''}>Co-ed group</option><option ${a?.groupType==='Band'?'selected':''}>Band</option><option ${a?.groupType==='Project group'?'selected':''}>Project group</option></select></div><div class="field"><label>DEBUT DATE</label><input name="debut" type="date" value="${esc(a?.debut||'')}"></div></div>
+ <div class="field"><label>MEMBERS</label><div id="memberChecks" class="list">${db.artists.filter(x=>x.type==='Soloist'||x.type==='Member').map(x=>`<label style="font-size:12px"><input type="checkbox" name="members" value="${x.id}" ${(a?.members||[]).includes(x.id)?'checked':''}> ${esc(x.name)}</label>`).join('')||'<span class="hint">sign soloists first, then add them to a group.</span>'}</div></div>
+ <div class="field"><label>GENRE / SOUND</label><input name="genre" value="${esc(a?.genre||'')}"></div><div class="field"><label>GROUP CONCEPT</label><input name="concept" value="${esc(a?.concept||'')}"></div>
+ <button class="primary" type="submit">♡ ${a?'save group':'create group'}</button></form>`);
+ $('groupForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),data=Object.fromEntries(f);data.members=f.getAll('members');if(a)Object.assign(a,data);else db.artists.push({id:uid(),type:'Group',role:data.groupType,...data});closeModal();save();toast('group created ♡')};
+}
+function openAlbum(a=null){
+ modal(a?'edit release':'create a release',`<form id="albumForm">
+ <div class="field"><label>ARTIST *</label><select name="artistId" required>${artistOptions(a?.artistId||'')}</select></div>
+ <div class="field"><label>RELEASE TITLE *</label><input name="title" required maxlength="65" value="${esc(a?.title||'')}" placeholder="e.g. BLOOM IN BLUE"></div>
+ <div class="grid"><div class="field"><label>RELEASE TYPE</label><select name="type">${['Single','Digital single','EP','Mini album','Studio album','Repackage','Mixtape','Compilation','Soundtrack'].map(t=>`<option ${a?.type===t?'selected':''}>${t}</option>`).join('')}</select></div><div class="field"><label>RELEASE DATE</label><input name="date" type="date" value="${esc(a?.date||'')}"></div></div>
+ <div class="grid"><div class="field"><label>ERA / CONCEPT</label><input name="concept" value="${esc(a?.concept||'')}" placeholder="the visual universe"></div><div class="field"><label>LEAD SINGLE</label><input name="lead" value="${esc(a?.lead||'')}"></div></div>
+ <div class="field"><label>TRACKLIST *</label><textarea name="tracks" required placeholder="01. Intro&#10;02. Main character&#10;03. Afterglow"></textarea></div>
+ <div class="field"><label>ALBUM NOTES</label><textarea name="notes">${esc(a?.notes||'')}</textarea></div>
+ <button class="primary" type="submit">♡ ${a?'save release':'publish to discography'}</button></form>`);
+ const form=$('albumForm');form.elements.tracks.value=a?.tracks?.join('\n')||'';
+ form.onsubmit=e=>{e.preventDefault();const f=new FormData(form),data=Object.fromEntries(f);data.tracks=data.tracks.split('\n').map(x=>x.trim()).filter(Boolean);if(a)Object.assign(a,data);else db.albums.push({id:uid(),...data});closeModal();save();toast('release added to discography ♡')};
+}
+function openEvent(a=null){
+ modal(a?'edit schedule event':'schedule a new event',`<form id="eventForm">
+ <div class="field"><label>ARTIST / GROUP *</label><select name="artistId" required>${artistOptions(a?.artistId||'')}</select></div>
+ <div class="grid"><div class="field"><label>EVENT TYPE</label><select name="type">${['Debut','Comeback','Single release','Music video','Tour','Fan meeting','Other'].map(t=>`<option ${a?.type===t?'selected':''}>${t}</option>`).join('')}</select></div><div class="field"><label>DATE</label><input name="date" type="date" value="${esc(a?.date||'')}"></div></div>
+ <div class="field"><label>EVENT TITLE *</label><input name="title" required value="${esc(a?.title||'')}" placeholder="e.g. FIRST LIGHT comeback"></div>
+ <div class="field"><label>DETAILS</label><textarea name="details">${esc(a?.details||'')}</textarea></div>
+ <button class="primary" type="submit">♡ save to calendar</button></form>`);
+ $('eventForm').onsubmit=e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.target));if(a)Object.assign(a,data);else db.events.push({id:uid(),...data});closeModal();save();toast('event scheduled ♡')};
+}
+function openAward(a=null){
+ modal(a?'edit award record':'add an award',`<form id="awardForm">
+ <div class="field"><label>RECIPIENT *</label><select name="artistId" required>${artistOptions(a?.artistId||'')}</select></div>
+ <div class="grid"><div class="field"><label>AWARD SHOW</label><input name="show" value="${esc(a?.show||'')}" placeholder="e.g. Golden Disc Awards"></div><div class="field"><label>YEAR</label><input name="year" type="number" min="1900" max="2200" value="${esc(a?.year||new Date().getFullYear())}"></div></div>
+ <div class="field"><label>CATEGORY *</label><input name="category" required value="${esc(a?.category||'')}" placeholder="Best New Artist"></div>
+ <div class="field"><label>RESULT</label><select name="result"><option ${a?.result==='Winner'?'selected':''}>Winner</option><option ${a?.result==='Nominee'?'selected':''}>Nominee</option></select></div>
+ <button class="primary" type="submit">♡ save award history</button></form>`);
+ $('awardForm').onsubmit=e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.target));if(a)Object.assign(a,data);else db.awards.push({id:uid(),...data});closeModal();save();toast('award cabinet updated ♡')};
+}
+function removeItem(type,id){if(!confirm('remove this record from your label?'))return;db[type]=db[type].filter(x=>x.id!==id);save();toast('record removed')}
+function editButton(type,a){return `<button class="small" onclick="editRecord('${type}','${a.id}')">edit</button> <button class="small danger" onclick="removeItem('${type}','${a.id}')">delete</button>`}
+function editRecord(type,id){const a=db[type].find(x=>x.id===id);if(!a)return;({artists:openArtist,albums:openAlbum,events:openEvent,awards:openAward})[type](a)}
+function cardItem(icon,title,meta,buttons=''){return `<div class="item"><div class="avatar">${icon}</div><div class="itembody"><b>${esc(title)}</b><small>${meta}</small></div><div class="actions">${buttons}</div></div>`}
+function renderArtists(){const q=($('artistSearch')?.value||'').toLowerCase();const items=db.artists.filter(a=>(a.name+' '+a.genre+' '+a.concept).toLowerCase().includes(q));$('artistList').innerHTML=items.length?items.map(a=>cardItem(a.type==='Group'?'✿':'♫',a.name,`${a.type} · ${esc(a.genre||'genre not set')} · ${a.debut?'debut '+esc(a.debut):'debut date pending'}<br>${esc(a.concept||'concept pending')} ${a.members?.length?'<br>Members: '+a.members.map(artistName).map(esc).join(', '):''}`,editButton('artists',a))).join(''):'<div class="empty">no artists here yet. sign your first star ♡</div>'}
+function renderAlbums(){const filter=$('albumFilter').value;const arr=db.albums.filter(a=>!filter||a.artistId===filter).sort((a,b)=>(b.date||'').localeCompare(a.date||''));$('albumList').innerHTML=arr.length?arr.map(a=>`<div class="item"><div class="avatar">♫</div><div class="itembody"><b>${esc(a.title)}</b><small>${esc(artistName(a.artistId))} · ${esc(a.type)} · ${esc(a.date||'date pending')}<br>${esc(a.concept||'')} · ${a.tracks.length} tracks</small><details><summary class="hint">view tracklist</summary>${a.tracks.map((t,i)=>`<div class="track"><span>${String(i+1).padStart(2,'0')} · ${esc(t)}</span>${t===a.lead?'<span class="pill">TITLE</span>':''}</div>`).join('')}</details></div><div class="actions">${editButton('albums',a)}</div></div>`).join(''):'<div class="empty">your discography is waiting for its first release ♡</div>'}
+function renderEvents(){const filter=$('eventFilter').value;const arr=db.events.filter(a=>!filter||a.type===filter).sort((a,b)=>(a.date||'').localeCompare(b.date||''));$('eventList').innerHTML=arr.length?arr.map(a=>cardItem('▦',a.title,`${artistName(a.artistId)} · ${a.type} · ${a.date||'date pending'}<br>${esc(a.details||'')}`,editButton('events',a))).join(''):'<div class="empty">no events scheduled. plan a debut or comeback ♡</div>'}
+function renderAwards(){const filter=$('awardFilter').value;const arr=db.awards.filter(a=>!filter||String(a.year)===filter).sort((a,b)=>Number(b.year)-Number(a.year));$('awardList').innerHTML=arr.length?arr.map(a=>cardItem(a.result==='Winner'?'🏆':'✧',a.category,`${artistName(a.artistId)} · ${esc(a.show||'award show')} · ${esc(a.year)}<br><span class="pill">${esc(a.result)}</span>`,editButton('awards',a))).join(''):'<div class="empty">the award cabinet is empty. every legend starts somewhere ♡</div>'}
+function render(){const solos=db.artists.filter(a=>a.type!=='Group').length,groups=db.artists.filter(a=>a.type==='Group').length;const trackCount=db.albums.reduce((n,a)=>n+a.tracks.length,0);$('artistCount').textContent=db.artists.length;$('releaseCount').textContent=db.albums.length;$('awardCount').textContent=db.awards.filter(a=>a.result==='Winner').length;$('soloCount').textContent=solos;$('groupCount').textContent=groups;$('trackCount').textContent=trackCount;$('upcomingCount').textContent=db.events.filter(e=>e.date&&e.date>=new Date().toISOString().slice(0,10)).length;
+ $('sideLabel').textContent=db.label.name+' · est. '+db.label.year;$('welcome').textContent=db.label.tagline+' '+(db.label.founder?'· founded by '+db.label.founder:'· your label universe starts here.');
+ $('recentArtists').innerHTML=db.artists.length?db.artists.slice(-4).reverse().map(a=>cardItem(a.type==='Group'?'✿':'♫',a.name,`${a.type} · ${a.genre||'genre pending'}`)).join(''):'<div class="empty">no signings yet ♡</div>';
+ $('recentAlbums').innerHTML=db.albums.length?db.albums.slice(-3).reverse().map(a=>cardItem('♫',a.title,`${artistName(a.artistId)} · ${a.type} · ${a.date||'date pending'}`)).join(''):'<div class="empty">no releases yet ♡</div>';
+ const upcoming=db.events.filter(e=>e.date&&e.date>=new Date().toISOString().slice(0,10)).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,4);$('nextEvents').innerHTML=upcoming.length?upcoming.map(a=>cardItem('▦',a.title,`${artistName(a.artistId)} · ${a.date}`)).join(''):'<div class="empty">no upcoming events ♡</div>';
+ $('albumFilter').innerHTML='<option value="">all artists</option>'+db.artists.map(a=>`<option value="${a.id}">${esc(a.name)}</option>`).join('');
+ $('awardFilter').innerHTML='<option value="">all years</option>'+[...new Set(db.awards.map(a=>String(a.year)))].sort().reverse().map(y=>`<option>${esc(y)}</option>`).join('');
+ renderArtists();renderAlbums();renderEvents();renderAwards();
+ $('labelName').value=db.label.name;$('labelTagline').value=db.label.tagline;$('labelFounder').value=db.label.founder;$('labelYear').value=db.label.year;
+}
+$('artistSearch').addEventListener('input',renderArtists);$('albumFilter').addEventListener('change',renderAlbums);$('eventFilter').addEventListener('change',renderEvents);$('awardFilter').addEventListener('change',renderAwards);
+function saveLabel(){db.label={name:$('labelName').value.trim()||'Sugar Records',tagline:$('labelTagline').value.trim(),founder:$('labelFounder').value.trim(),year:$('labelYear').value||2026};save();toast('label identity saved ♡')}
+function exportData(){const blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='sugar-records-backup.json';a.click();URL.revokeObjectURL(url);toast('backup exported ♡')}
+$('importFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());if(!data.artists||!data.albums||!data.events||!data.awards)throw Error();if(confirm('replace your current label with this backup?')){db=data;save();toast('backup imported ♡')}}catch(err){alert('that backup file could not be read.')}e.target.value=''});
+function resetData(){if(confirm('this will erase all your label data in this browser. export a backup first if you want to keep it. continue?')){localStorage.removeItem(KEY);db={label:{name:'Sugar Records',tagline:'A little universe of music',founder:'',year:2026},artists:[],albums:[],events:[],awards:[]};render();toast('label reset')}}
+const quotes=['every era deserves its own visual universe.','make the b-side someone else’s favourite song.','a debut is a beginning, not a ceiling.','build a catalogue that tells a story.','the best concept is the one only your artist could own.','leave room for a surprise release.'];function newQuote(){$('directorQuote').textContent=quotes[Math.floor(Math.random()*quotes.length)]}
+load();render();
+</script>
+</body>
+</html>
